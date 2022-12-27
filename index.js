@@ -9,6 +9,7 @@ app.use(express.json());
 app.use(cors());
 
 app.post("/register", async (req, resp) => {
+  console.warn(req.body);
   let user = new User(req.body);
   let result = await user.save();
   result = result.toObject();
